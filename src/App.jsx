@@ -24,6 +24,11 @@ const GlobalStyles = createGlobalStyle`
     border: none;
     background-color: inherit;
   }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 `;
 
 const Wrapper = styled.div`

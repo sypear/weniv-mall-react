@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import styled from 'styled-components'
 
 const HeaderWrapper = styled.header`
-  padding: 50px;
+  padding: 80px 50px;
   color: var(--white);
   background-color: var(--text-color);
 `;
@@ -10,7 +11,9 @@ const HeaderWrapper = styled.header`
 export default function Header() {
   return (
     <HeaderWrapper>
-      <h1>Weniv Mall</h1>
+      <Link to="/">
+        <h1>Weniv Mall</h1>
+      </Link>
     </HeaderWrapper>
   )
 }

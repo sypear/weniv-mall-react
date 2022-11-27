@@ -1,0 +1,18 @@
+:root {
+  --main-color: #6327FE;
+  --text-color: #333333;
+  --text-sub-color: #828282;
+  --text-emphasis-color: #EB5757;
+  --bg-purple-color: #F3F0FB;
+  --bg-grey-color: #F2F2F2;
+  --border-color: #C4C4C4;
+  --border-sub-color: #E0E0E0;
+  --button-border-color: #BDBDBD;
+  --white: #FFF;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -4,9 +4,10 @@ import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import HomePage from "./pages/HomePage/HomePage";
 import "./app.css";
-import ProductDetailPage from "./pages/ProductDetailPage/ProductDetailPage";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import CartPage from "./pages/CartPage/CartPage";
+import InfoModal from "./components/InfoModal/InfoModal";
+import ProductDetailPage from "./pages/ProductDetailPage/ProductDetailPage";
 
 const GlobalStyles = createGlobalStyle`
   ${reset}
@@ -51,7 +52,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <ContentsWrapper>
-          <Routes>
+          <Routes >
             <Route path="/" element={<HomePage />} />
             <Route path="/:id" element={<ProductDetailPage />} />
             <Route path="/cart" element={<CartPage />} />

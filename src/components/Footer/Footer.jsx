@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const FooterWrapper = styled.footer`
-  padding: 50px;
+  padding: 80px 50px;
   color: var(--white);
   background-color: var(--text-color);
 `;
@@ -10,7 +10,7 @@ const FooterWrapper = styled.footer`
 const Footer = () => {
   return (
     <FooterWrapper>
-      footer
+      ⓒ Weniv
     </FooterWrapper>
   );
 }

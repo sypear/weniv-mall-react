@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import CartButton from '../../../Buttons/CartButton/CartButton';
 import FillButton from '../../../Buttons/FillButton/FillButton';
 import LikeButton from '../../../Buttons/LikeButton/LikeButton';
+import DropdownButton from '../../../Buttons/DropdownButton/DropdownButton';
+import AmountButton from '../../../Buttons/AmountButton/AmountButton';
 
 const Wrapper = styled.div`
   flex: 1;
@@ -19,7 +21,7 @@ const Price = styled.h2`
   display: flex;
   align-items: center;
   font-size: 24px;
-  margin-bottom: 99px;
+  margin-bottom: 107px;
 
   & span {
     font-size: 16px;
@@ -97,7 +99,7 @@ export default function DetailInfo({...productData}) {
           : ` ${{...productData[0]}.shippingFee}원`
         }
       </ShippingType>
-      <DropDown>
+      <DropdownButton>
         {
           productData[0].option.map(item => (
             <li key={item.id}>
@@ -110,7 +112,8 @@ export default function DetailInfo({...productData}) {
             </li>
           ))
         }
-      </DropDown>
+      </DropdownButton>
+      <AmountButton></AmountButton>
       <PriceInfo>
         <h2>총 상품 금액</h2>
         <FinalPriceInfo>

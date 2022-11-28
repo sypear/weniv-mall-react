@@ -6,8 +6,8 @@ import HomePage from "./pages/HomePage/HomePage";
 import "./app.css";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import CartPage from "./pages/CartPage/CartPage";
-import InfoModal from "./components/InfoModal/InfoModal";
 import ProductDetailPage from "./pages/ProductDetailPage/ProductDetailPage";
+import ProductModal from "./components/Modal/Modal";
 
 const GlobalStyles = createGlobalStyle`
   ${reset}
@@ -24,6 +24,7 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     border: none;
     background-color: inherit;
+    cursor: pointer;
   }
 
   a {
@@ -46,21 +47,33 @@ const ContentsWrapper = styled.main`
 `;
 
 function App() {
+  const location = useLocation();
+  const background = location.state && location.state.background;
+
   return (
     <Wrapper>
       <GlobalStyles />
-      <BrowserRouter>
-        <Header />
-        <ContentsWrapper>
-          <Routes >
-            <Route path="/" element={<HomePage />} />
-            <Route path="/:id" element={<ProductDetailPage />} />
-            <Route path="/cart" element={<CartPage />} />
+      <Header />
+      <ContentsWrapper>
+        {/* <Routes >
+          <Route path="/" element={<HomePage />} />
+          <Route path="/:id" element={<ProductDetailPage />}>
+            {background && <Route path="modal" element={<InfoModal />} />}
+          </Route>
+          <Route path="/cart" element={<CartPage />} />
+        </Routes> */}
+        <Routes location={background || location}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/:id" element={<ProductDetailPage />} />
+        </Routes>
+        {background && (
+          <Routes>
+            <Route path="/:id" element={<ProductModal />} />
           </Routes>
-        </ContentsWrapper>
-        <Footer />
-      </BrowserRouter>
-    </Wrapper>
+        )}
+      </ContentsWrapper>
+      <Footer />
+  </Wrapper>
   );
 }
 

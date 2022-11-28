@@ -10,17 +10,19 @@ const CardItem = styled.li`
   position: relative;
   width: 380px;
   cursor: pointer;
+
+  & img {
+    margin-bottom: 20px;
+  }
 `;
 
 export default function Card({...item}) {
   return (
     <CardItem>
-      <Link to={`/${item.id}`}>
-        <ProductImage thumbnailImg={item.thumbnailImg} />
-        <ProductName productName={item.productName} />
-        <ProductLikeButton />
-        <ProductPrice price={item.price} />
-      </Link>
+      <ProductImage thumbnailImg={item.thumbnailImg} widthSize='100%' />
+      <ProductName productName={item.productName} />
+      <ProductLikeButton />
+      <ProductPrice price={item.price} />
     </CardItem>
   )
 }

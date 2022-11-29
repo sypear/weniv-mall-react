@@ -8,8 +8,6 @@ const ProductThumbnailImage = styled.img`
 `
 
 export default function ProductImage({thumbnailImg, widthSize}) {
-  console.log('믹', thumbnailImg);
-
   const thubnailImgURL = `https://test.api.weniv.co.kr/${thumbnailImg}`;
 
   return (

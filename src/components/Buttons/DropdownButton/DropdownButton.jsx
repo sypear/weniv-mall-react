@@ -8,7 +8,7 @@ const Wrapper = styled.div`
 `;
 
 const Button = styled.button`
-  width: 440px;
+  width: 100%;
   padding: 11px 0 11px 14px;
   margin-bottom: 10px;
   font-size: 14px;
@@ -23,7 +23,7 @@ const Button = styled.button`
 const List = styled.ul`
   position: absolute;
   display: block;
-  width: 440px;
+  width: ${props => props.pageType === 'page' ? '560px;' : '440px;'};
   padding: 9px 8px;
   border: 1px solid var(--button-border-color);
   border-radius: 5px;
@@ -42,7 +42,7 @@ const Item = styled.li`
   }
 `
 
-const Dropdown = () => {
+const Dropdown = ({pageType}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -51,7 +51,7 @@ const Dropdown = () => {
       {
         isOpen ?
         (
-          <List>
+          <List pageType={pageType}>
             <Item>밍</Item>
             <Item>믹</Item>
           </List>

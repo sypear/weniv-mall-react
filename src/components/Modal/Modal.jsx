@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import ProductModal from './ProductModal/ProductModal';
+import ProductDetail from '../ProductDetail/ProductDetail';
 import { data } from '../../database/data';
 import CloseIcon from '../../assets/images/icon-delete.svg';
 
@@ -48,7 +48,7 @@ const Modal = () => {
   return (
     <Overlay>
       <ModalWrapper>
-        <ProductModal productData={productData} />
+        <ProductDetail productData={productData} pageType='modal' />
         <CloseButton onClick={() => navigate(-1)} />
         </ModalWrapper>
     </Overlay>

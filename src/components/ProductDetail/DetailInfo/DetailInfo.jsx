@@ -1,15 +1,17 @@
-import React from 'react'
+import React, { useCallback, useState } from 'react'
 import styled from 'styled-components';
 import CartButton from '../../Buttons/CartButton/CartButton';
 import FillButton from '../../Buttons/FillButton/FillButton';
 import LikeButton from '../../Buttons/LikeButton/LikeButton';
 import DropdownButton from '../../Buttons/DropdownButton/DropdownButton';
 import AmountButton from '../../Buttons/AmountButton/AmountButton';
+import Line from '../../Line/Line';
 
 const Wrapper = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 `;
 
 const ProductName = styled.h2`
@@ -30,16 +32,12 @@ const Price = styled.h2`
 
 const ShippingType = styled.p`
   padding-bottom: 10px;
-  margin-bottom: 10px;
   font-size: 16px;
   color: var(--text-sub-color);
-  border-bottom: 2px solid var(--border-sub-color);
 `;
 
-const DropDown = styled.ul`
-  padding-bottom: 10px;
-  margin-bottom: 30px;
-  border-bottom: 2px solid var(--border-sub-color);
+const SelectButtonWrapper = styled.div`
+  margin-bottom: 10px;
 `;
 
 const PriceInfo = styled.div`
@@ -81,50 +79,63 @@ const FinalPrice = styled.strong`
   }
 `
 
-const SelectButtons = styled.div`
+const ControlButonWrapper = styled.div`
   display: flex;
   gap: 6px;
 `;
 
 export default function DetailInfo({productData, pageType}) {
+  const data = productData[0];
+  const [isSoldOut, setIsSoldOut] = useState(data.stockCount === 0 ? true : false);
+  const [amount, setIsAmount] = useState(1);
+
+  const handleAmountChange = useCallback((inputAmount) => {
+    setIsAmount(inputAmount);
+  }, []);
+
   return (
     <Wrapper>
-      <ProductName>{{...productData[0]}.productName}</ProductName>
-      <Price>{{...productData[0]}.price}<span>원</span></Price>
-      <ShippingType>
-        택배배송 /
-        {
-          {...productData[0].shippingFee} === 0 ?
-          ' 무료배송'
-          : ` ${{...productData[0]}.shippingFee}원`
-        }
-      </ShippingType>
-      <DropdownButton pageType={pageType}>
-        {
-          productData[0].option.map(item => (
-            <li key={item.id}>
-              {item.optionName}
+      <div>
+        <ProductName>{data.productName}</ProductName>
+        <Price>{data.price}<span>원</span></Price>
+      </div>
+      {
+        isSoldOut
+        ? null
+        : (
+          <>
+            <ShippingType>
+              택배배송 /
               {
-                item.additionalFee === 0 ?
-                null :
-                ` (${item.additionalFee}원)`
+                data.shippingFee === 0
+                ? ' 무료배송'
+                : ` ${data.shippingFee}원`
               }
-            </li>
-          ))
-        }
-      </DropdownButton>
-      <PriceInfo>
-        <h2>총 상품 금액</h2>
-        <FinalPriceInfo>
-          <Quantity>총 수량 <span>1</span>개</Quantity>
-          <FinalPrice>13500<span>원</span></FinalPrice>
-        </FinalPriceInfo>
-      </PriceInfo>
-      <SelectButtons>
-        <FillButton pageType={pageType}>바로구매</FillButton>
-        <CartButton />
-        <LikeButton>좋아요</LikeButton>
-      </SelectButtons>
+            </ShippingType>
+            <Line margin='10px' />
+            <SelectButtonWrapper>
+            {
+              data.option.length === 0
+              ? ( <AmountButton onChangeAmount={handleAmountChange} stockCount={data.stockCount} amount={amount} /> )
+              : ( <DropdownButton options={data.option} pageType={pageType} /> )
+            }
+            </SelectButtonWrapper>
+            <Line margin='16px' />
+            <PriceInfo>
+              <h2>총 상품 금액</h2>
+              <FinalPriceInfo>
+                <Quantity>총 수량 <span>{amount}</span>개</Quantity>
+                <FinalPrice>{amount * data.price}<span>원</span></FinalPrice>
+              </FinalPriceInfo>
+            </PriceInfo>
+          </>
+        )
+      }
+      <ControlButonWrapper>
+        <FillButton isSoldOut={isSoldOut} pageType={pageType} text={isSoldOut ? '품절된 상품입니다.' : '바로 구매'} />
+        <CartButton isSoldOut={isSoldOut} />
+        <LikeButton isSoldOut={isSoldOut} />
+      </ControlButonWrapper>
     </Wrapper>
   )
 }

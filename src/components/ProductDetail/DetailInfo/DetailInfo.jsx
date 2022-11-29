@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components';
-import CartButton from '../../../Buttons/CartButton/CartButton';
-import FillButton from '../../../Buttons/FillButton/FillButton';
-import LikeButton from '../../../Buttons/LikeButton/LikeButton';
-import DropdownButton from '../../../Buttons/DropdownButton/DropdownButton';
-import AmountButton from '../../../Buttons/AmountButton/AmountButton';
+import CartButton from '../../Buttons/CartButton/CartButton';
+import FillButton from '../../Buttons/FillButton/FillButton';
+import LikeButton from '../../Buttons/LikeButton/LikeButton';
+import DropdownButton from '../../Buttons/DropdownButton/DropdownButton';
+import AmountButton from '../../Buttons/AmountButton/AmountButton';
 
 const Wrapper = styled.div`
   flex: 1;
@@ -86,7 +86,7 @@ const SelectButtons = styled.div`
   gap: 6px;
 `;
 
-export default function DetailInfo({...productData}) {
+export default function DetailInfo({productData, pageType}) {
   return (
     <Wrapper>
       <ProductName>{{...productData[0]}.productName}</ProductName>
@@ -99,7 +99,7 @@ export default function DetailInfo({...productData}) {
           : ` ${{...productData[0]}.shippingFee}원`
         }
       </ShippingType>
-      <DropdownButton>
+      <DropdownButton pageType={pageType}>
         {
           productData[0].option.map(item => (
             <li key={item.id}>
@@ -113,7 +113,6 @@ export default function DetailInfo({...productData}) {
           ))
         }
       </DropdownButton>
-      <AmountButton></AmountButton>
       <PriceInfo>
         <h2>총 상품 금액</h2>
         <FinalPriceInfo>
@@ -122,7 +121,7 @@ export default function DetailInfo({...productData}) {
         </FinalPriceInfo>
       </PriceInfo>
       <SelectButtons>
-        <FillButton>바로구매</FillButton>
+        <FillButton pageType={pageType}>바로구매</FillButton>
         <CartButton />
         <LikeButton>좋아요</LikeButton>
       </SelectButtons>

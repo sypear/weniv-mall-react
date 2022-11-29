@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/weniv-mall-react/static/css/main.1cb4b00b.css",
-    "main.js": "/weniv-mall-react/static/js/main.02271b08.js",
+    "main.css": "/weniv-mall-react/static/css/main.d5507172.css",
+    "main.js": "/weniv-mall-react/static/js/main.3a716de0.js",
     "static/media/SpoqaHanSansNeo-Bold.otf": "/weniv-mall-react/static/media/SpoqaHanSansNeo-Bold.577064393254c1a43de9.otf",
     "static/media/SpoqaHanSansNeo-Medium.otf": "/weniv-mall-react/static/media/SpoqaHanSansNeo-Medium.fbf62f354480b77797d7.otf",
     "static/media/SpoqaHanSansNeo-Regular.otf": "/weniv-mall-react/static/media/SpoqaHanSansNeo-Regular.42d3dd481b467623968a.otf",
@@ -16,11 +16,11 @@
     "static/media/icon-Triangle-down.svg": "/weniv-mall-react/static/media/icon-Triangle-down.40b0deef91a4d33bf13c828490a78519.svg",
     "index.html": "/weniv-mall-react/index.html",
     "static/media/icon-delete.svg": "/weniv-mall-react/static/media/icon-delete.72966261b2dc10e835c3abbe661f0a70.svg",
-    "main.1cb4b00b.css.map": "/weniv-mall-react/static/css/main.1cb4b00b.css.map",
-    "main.02271b08.js.map": "/weniv-mall-react/static/js/main.02271b08.js.map"
+    "main.d5507172.css.map": "/weniv-mall-react/static/css/main.d5507172.css.map",
+    "main.3a716de0.js.map": "/weniv-mall-react/static/js/main.3a716de0.js.map"
   },
   "entrypoints": [
-    "static/css/main.1cb4b00b.css",
-    "static/js/main.02271b08.js"
+    "static/css/main.d5507172.css",
+    "static/js/main.3a716de0.js"
   ]
 }

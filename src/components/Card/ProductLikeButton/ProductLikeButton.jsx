@@ -10,18 +10,18 @@ const LikeButton = styled.button`
   width: 22px;
   height: 22px;
   background: no-repeat center ${(props) => props.isLike ? `url(${heartOnIcon})` : `url(${heartOffIcon})`};
-  cursor: pointer;
 `;
 
 const ProductLikeButton = () => {
   const [isLike, setIsLike] = useState(false);
 
-  const handleProductLike = () => {
+  const handleProductLike = (e) => {
+    e.preventDefault(); // 좋아요 버튼 클릭시 모달창이 열리지 않도록 하기 위해 사용
     setIsLike(!isLike);
   }
 
   return (
-    <LikeButton onClick={handleProductLike} isLike={isLike} />
+    <LikeButton onClick={(e) => handleProductLike(e)} isLike={isLike} />
   );
 }
 

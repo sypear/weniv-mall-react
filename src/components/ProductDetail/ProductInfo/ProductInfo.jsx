@@ -46,7 +46,11 @@ const ProductInfo = ({pubDate, id, stockCount}) => {
 
         <li>
           <h3>재고 수량</h3>
-          <p>{stockCount}개</p>
+          <p>
+            {
+              stockCount === 0 ? '-' : `${stockCount}개`
+            }
+          </p>
         </li>
       </InfoWrapper>
     </>

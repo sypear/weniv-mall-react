@@ -15,18 +15,20 @@ const Wrapper = styled.div`
 `;
 
 const ProductName = styled.h2`
-  font-size: 24px;
   margin-bottom: 10px;
+  font-size: 24px;
 `;
 
 const Price = styled.h2`
   display: flex;
   align-items: center;
-  font-size: 24px;
   margin-bottom: 107px;
+  font-size: 24px;
+  font-weight: 700;
 
   & span {
     font-size: 16px;
+    font-weight: 400;
   }
 `;
 
@@ -48,6 +50,7 @@ const PriceInfo = styled.div`
   
   & h2 {
     font-size: 18px;
+    font-weight: 500;
     color: var(--text-color);
   }
 `

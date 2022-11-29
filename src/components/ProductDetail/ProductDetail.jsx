@@ -25,7 +25,7 @@ const ProductDetail = ({productData, pageType}) => {
   return (
     <Wrapper>
       <Top>
-        <ProductImage thumbnailImg={data.thumbnailImg} widthSize='400px' />
+        <ProductImage thumbnailImg={data.thumbnailImg} widthSize='400px' pageType='modal' />
         <DetailInfo productData={productData} pageType={pageType} />
       </Top>
       <ProductInfo pubDate={data.pubDate} id={data.id} stockCount={data.stockCount} />

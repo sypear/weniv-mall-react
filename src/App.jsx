@@ -11,13 +11,18 @@ import ProductModal from "./components/Modal/Modal";
 
 const GlobalStyles = createGlobalStyle`
   ${reset}
-  
+
   * {
     box-sizing: border-box;
   }
 
   body {
+    font-family: 'Spoqa Han Sans Neo', sans-serif;
     color: var(--text-color);
+  }
+
+  button, input, textarea {
+    font-family: 'Spoqa Han Sans Neo', sans-serif;
   }
 
   button {
@@ -30,6 +35,12 @@ const GlobalStyles = createGlobalStyle`
   a {
     color: inherit;
     text-decoration: none;
+  }
+
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
   }
 `;
 
@@ -65,6 +76,7 @@ function App() {
         <Routes location={background || location}>
           <Route path="/" element={<HomePage />} />
           <Route path="/:id" element={<ProductDetailPage />} />
+          <Route path="/cart" element={<CartPage />} />
         </Routes>
         {background && (
           <Routes>

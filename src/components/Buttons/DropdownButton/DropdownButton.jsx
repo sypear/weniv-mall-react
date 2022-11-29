@@ -3,14 +3,12 @@ import styled from 'styled-components';
 import DownIcon from '../../../assets/images/icon-Triangle-down.svg';
 
 const Wrapper = styled.div`
-  margin-bottom: 30px;
-  border-bottom: 2px solid var(--border-sub-color);
+  position: relative;
 `;
 
 const Button = styled.button`
   width: 100%;
   padding: 11px 0 11px 14px;
-  margin-bottom: 10px;
   font-size: 14px;
   line-height: 17px;
   text-align: left;
@@ -42,21 +40,29 @@ const Item = styled.li`
   }
 `
 
-const Dropdown = ({pageType}) => {
+const Dropdown = ({options, pageType}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <Wrapper>
       <Button onClick={() => setIsOpen(!isOpen)}>옵션을 선택하세요.</Button>
       {
-        isOpen ?
-        (
+        isOpen ? (
           <List pageType={pageType}>
-            <Item>밍</Item>
-            <Item>믹</Item>
+            {
+              options.map(option => (
+                <Item key={option.id}>
+                    {option.optionName}
+                    {
+                      option.additionalFee === 0 ?
+                      null :
+                      ` (+ ${option.additionalFee}원)`
+                    }
+                </Item>
+              ))
+            }
           </List>
-        )
-        : <></>
+        ) : <></>
       }
     </Wrapper>
   );

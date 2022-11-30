@@ -127,8 +127,13 @@ export default function DetailInfo({ stockCount, productName, price, shippingFee
               <PriceInfo>
                 <h2>총 상품 금액</h2>
                 <FinalPriceInfo>
-                  <Quantity>총 수량 <span>{amount}</span>개</Quantity>
-                  <FinalPrice>{amount * price}<span>원</span></FinalPrice>
+                  <Quantity>
+                    총 수량 {amount ? <span>{amount}</span> : '1'}개
+                  </Quantity>
+                  <FinalPrice>
+                    {amount ? amount * price : price}
+                    <span>원</span>
+                  </FinalPrice>
                 </FinalPriceInfo>
               </PriceInfo>
             </>

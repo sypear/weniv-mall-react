@@ -66,6 +66,12 @@ export default function AmountButton({ onChangeAmount, stockCount, amount }) {
       return;
     }
 
+    if (!e.target.value) {
+      setTimeout(() => {
+        if (!e.target.value) e.target.value = 1;
+      }, 500);
+    }
+
     onChangeAmount(parseInt(e.target.value));
   }
 

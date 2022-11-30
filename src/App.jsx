@@ -10,6 +10,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import CartPage from "./pages/CartPage/CartPage";
 import ProductDetailPage from "./pages/ProductDetailPage/ProductDetailPage";
 import ProductModal from "./components/Modal/Modal";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
 const GlobalStyles = createGlobalStyle`
   ${reset}
@@ -88,12 +89,13 @@ function App() {
       <ContentsWrapper>
         <Routes location={background || location}>
           <Route path="/" element={<HomePage productsData={productsData} />} />
-          <Route path="/:id" element={<ProductDetailPage productsData={productsData} />} />
+          <Route path="/product/:id" element={<ProductDetailPage productsData={productsData} />} />
           <Route path="/cart" element={<CartPage />} />
+          <Route path="/*" element={<NotFoundPage />} />
         </Routes>
         {background && (
           <Routes>
-            <Route path="/:id" element={<ProductModal productsData={productsData} />} />
+            <Route path="/product/:id" element={<ProductModal productsData={productsData} />} />
           </Routes>
         )}
       </ContentsWrapper>

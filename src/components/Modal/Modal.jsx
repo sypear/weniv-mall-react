@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import ProductDetail from '../ProductDetail/ProductDetail';
-import { data } from '../../database/data';
 import CloseIcon from '../../assets/images/icon-delete.svg';
 
 const Overlay = styled.div`
@@ -40,9 +39,9 @@ const CloseButton = styled.button`
   background: no-repeat url(${CloseIcon}) center;
 `;
 
-const Modal = () => {
+const Modal = ({ productsData }) => {
   const id = useLocation().pathname.slice(1);
-  const productData = data.filter(item => item.id === +id);
+  const productData = { ...productsData.filter(item => item.id === +id)[0] };
   const navigate = useNavigate();
   const backgroundRef = useRef(null);
 
@@ -64,6 +63,8 @@ const Modal = () => {
       navigate(-1);
     }
   }
+
+  console.log(productData);
 
   return (
     <Overlay ref={backgroundRef} onClick={handleCloseModal}>

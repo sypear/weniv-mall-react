@@ -64,10 +64,10 @@ function App() {
   const background = location.state && location.state.background;
   const [productsData, setProductsData] = useState([]);
 
-  useEffect(() => {
-    const url = "https://test.api.weniv.co.kr/mall";
+  const url = "https://test.api.weniv.co.kr/mall";
 
-    axios
+  const getProductsData = async () => {
+    await axios
       .get(url)
       .then(res => {
         setProductsData([...res.data]);
@@ -75,6 +75,10 @@ function App() {
       .catch(Error => {
         console.error(Error);
       })
+  };
+
+  useEffect(() => {
+    getProductsData();
   }, []);
 
   return (

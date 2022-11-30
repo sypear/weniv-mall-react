@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import React, { useEffect, useRef } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import ProductDetail from '../ProductDetail/ProductDetail';
 import { data } from '../../database/data';
@@ -10,7 +10,7 @@ const Overlay = styled.div`
   width: 100%;
   height: 100%;
   top: 0;
-  bottom: 0;
+  bottom: 3px;
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.5);
@@ -44,13 +44,20 @@ const Modal = () => {
   const id = useLocation().pathname.slice(1);
   const productData = data.filter(item => item.id === +id);
   const navigate = useNavigate();
+  const backgroundRef = useRef(null);
+
+  const handleCloseModal = (e) => {
+    if (e.target === backgroundRef.current) {
+      navigate(-1);
+    }
+  }
 
   return (
-    <Overlay>
+    <Overlay ref={backgroundRef} onClick={handleCloseModal}>
       <ModalWrapper>
         <ProductDetail productData={productData} pageType='modal' />
         <CloseButton onClick={() => navigate(-1)} />
-        </ModalWrapper>
+      </ModalWrapper>
     </Overlay>
   );
 }

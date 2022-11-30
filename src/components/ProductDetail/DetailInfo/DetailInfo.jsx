@@ -90,7 +90,6 @@ const ControlButonWrapper = styled.div`
 
 export default function DetailInfo({ stockCount, productName, price, shippingFee, option = [], pageType }) {
   const [isSoldOut, setIsSoldOut] = useState(stockCount === 0 ? true : false);
-  const [hasOption, setHasOptions] = useState(option ? true : false);
   const [amount, setIsAmount] = useState(1);
 
   const handleAmountChange = useCallback((inputAmount) => {
@@ -119,7 +118,7 @@ export default function DetailInfo({ stockCount, productName, price, shippingFee
               <Line margin='10px' />
               <SelectButtonWrapper>
                 {
-                  hasOption
+                  option.length === 0
                     ? (<AmountButton onChangeAmount={handleAmountChange} stockCount={stockCount} amount={amount} />)
                     : (<DropdownButton options={option} pageType={pageType} />)
                 }

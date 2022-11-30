@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/weniv-mall-react/static/css/main.bc0ed99d.css",
-    "main.js": "/weniv-mall-react/static/js/main.c3aedef5.js",
+    "main.js": "/weniv-mall-react/static/js/main.9639f02e.js",
     "static/media/SpoqaHanSansNeo-Bold.otf": "/weniv-mall-react/static/media/SpoqaHanSansNeo-Bold.577064393254c1a43de9.otf",
     "static/media/SpoqaHanSansNeo-Medium.otf": "/weniv-mall-react/static/media/SpoqaHanSansNeo-Medium.fbf62f354480b77797d7.otf",
     "static/media/SpoqaHanSansNeo-Regular.otf": "/weniv-mall-react/static/media/SpoqaHanSansNeo-Regular.42d3dd481b467623968a.otf",
@@ -19,10 +19,10 @@
     "index.html": "/weniv-mall-react/index.html",
     "static/media/icon-delete.svg": "/weniv-mall-react/static/media/icon-delete.72966261b2dc10e835c3abbe661f0a70.svg",
     "main.bc0ed99d.css.map": "/weniv-mall-react/static/css/main.bc0ed99d.css.map",
-    "main.c3aedef5.js.map": "/weniv-mall-react/static/js/main.c3aedef5.js.map"
+    "main.9639f02e.js.map": "/weniv-mall-react/static/js/main.9639f02e.js.map"
   },
   "entrypoints": [
     "static/css/main.bc0ed99d.css",
-    "static/js/main.c3aedef5.js"
+    "static/js/main.9639f02e.js"
   ]
 }

@@ -1,12 +1,13 @@
 {
   "files": {
     "main.css": "/weniv-mall-react/static/css/main.bc0ed99d.css",
-    "main.js": "/weniv-mall-react/static/js/main.f9c318f6.js",
+    "main.js": "/weniv-mall-react/static/js/main.c3aedef5.js",
     "static/media/SpoqaHanSansNeo-Bold.otf": "/weniv-mall-react/static/media/SpoqaHanSansNeo-Bold.577064393254c1a43de9.otf",
     "static/media/SpoqaHanSansNeo-Medium.otf": "/weniv-mall-react/static/media/SpoqaHanSansNeo-Medium.fbf62f354480b77797d7.otf",
     "static/media/SpoqaHanSansNeo-Regular.otf": "/weniv-mall-react/static/media/SpoqaHanSansNeo-Regular.42d3dd481b467623968a.otf",
     "static/media/SpoqaHanSansNeo-Thin.otf": "/weniv-mall-react/static/media/SpoqaHanSansNeo-Thin.a08606f1a9eb1dcac60d.otf",
     "static/media/SpoqaHanSansNeo-Light.otf": "/weniv-mall-react/static/media/SpoqaHanSansNeo-Light.a6f38db1a0cf0265dc43.otf",
+    "static/media/loading.gif": "/weniv-mall-react/static/media/loading.803f24369a085e35482e.gif",
     "static/media/error-404.png": "/weniv-mall-react/static/media/error-404.36ce7ca51f0712c46ebe.png",
     "static/media/empty-box.png": "/weniv-mall-react/static/media/empty-box.158a7fdc559cc7b7d45c.png",
     "static/media/icon-shopping-cart.svg": "/weniv-mall-react/static/media/icon-shopping-cart.00c131083ae49d6f2253f2e550ceb115.svg",
@@ -18,10 +19,10 @@
     "index.html": "/weniv-mall-react/index.html",
     "static/media/icon-delete.svg": "/weniv-mall-react/static/media/icon-delete.72966261b2dc10e835c3abbe661f0a70.svg",
     "main.bc0ed99d.css.map": "/weniv-mall-react/static/css/main.bc0ed99d.css.map",
-    "main.f9c318f6.js.map": "/weniv-mall-react/static/js/main.f9c318f6.js.map"
+    "main.c3aedef5.js.map": "/weniv-mall-react/static/js/main.c3aedef5.js.map"
   },
   "entrypoints": [
     "static/css/main.bc0ed99d.css",
-    "static/js/main.f9c318f6.js"
+    "static/js/main.c3aedef5.js"
   ]
 }

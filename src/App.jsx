@@ -1,10 +1,12 @@
 import styled, { createGlobalStyle } from "styled-components";
+import { Route, Routes, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import "./app.css";
 import reset from "styled-reset";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import HomePage from "./pages/HomePage/HomePage";
-import "./app.css";
-import { Route, Routes, useLocation } from "react-router-dom";
 import CartPage from "./pages/CartPage/CartPage";
 import ProductDetailPage from "./pages/ProductDetailPage/ProductDetailPage";
 import ProductModal from "./components/Modal/Modal";
@@ -60,6 +62,20 @@ const ContentsWrapper = styled.main`
 function App() {
   const location = useLocation();
   const background = location.state && location.state.background;
+  const [productsData, setProductsData] = useState([]);
+
+  useEffect(() => {
+    const url = "https://test.api.weniv.co.kr/mall";
+
+    axios
+      .get(url)
+      .then(res => {
+        setProductsData([...res.data]);
+      })
+      .catch(Error => {
+        console.error(Error);
+      })
+  }, []);
 
   return (
     <Wrapper>
@@ -67,13 +83,13 @@ function App() {
       <Header />
       <ContentsWrapper>
         <Routes location={background || location}>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/:id" element={<ProductDetailPage />} />
+          <Route path="/" element={<HomePage productsData={productsData} />} />
+          <Route path="/:id" element={<ProductDetailPage productsData={productsData} />} />
           <Route path="/cart" element={<CartPage />} />
         </Routes>
         {background && (
           <Routes>
-            <Route path="/:id" element={<ProductModal />} />
+            <Route path="/:id" element={<ProductModal productsData={productsData} />} />
           </Routes>
         )}
       </ContentsWrapper>

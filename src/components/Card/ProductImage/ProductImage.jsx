@@ -37,7 +37,7 @@ const SoldOut = styled.div`
   z-index: 20;
 `;
 
-export default function ProductImage({ thumbnailImg, widthSize, stockCount, pageType }) {
+export default function ProductImage({ thumbnailImg = '', widthSize, stockCount, pageType }) {
   const thubnailImgURL = `https://test.api.weniv.co.kr/${thumbnailImg}`;
 
   return (

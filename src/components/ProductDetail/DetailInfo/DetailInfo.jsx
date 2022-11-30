@@ -6,6 +6,7 @@ import LikeButton from '../../Buttons/LikeButton/LikeButton';
 import DropdownButton from '../../Buttons/DropdownButton/DropdownButton';
 import AmountButton from '../../Buttons/AmountButton/AmountButton';
 import Line from '../../Line/Line';
+import { render } from '@testing-library/react';
 
 const Wrapper = styled.div`
   flex: 1;
@@ -87,9 +88,9 @@ const ControlButonWrapper = styled.div`
   gap: 6px;
 `;
 
-export default function DetailInfo({ productData, pageType }) {
-  const data = productData[0];
-  const [isSoldOut, setIsSoldOut] = useState(data.stockCount === 0 ? true : false);
+export default function DetailInfo({ stockCount, productName, price, shippingFee, option = [], pageType }) {
+  const [isSoldOut, setIsSoldOut] = useState(stockCount === 0 ? true : false);
+  const [hasOption, setHasOptions] = useState(option ? true : false);
   const [amount, setIsAmount] = useState(1);
 
   const handleAmountChange = useCallback((inputAmount) => {
@@ -99,8 +100,8 @@ export default function DetailInfo({ productData, pageType }) {
   return (
     <Wrapper>
       <div>
-        <ProductName>{data.productName}</ProductName>
-        <Price>{data.price}<span>원</span></Price>
+        <ProductName>{productName}</ProductName>
+        <Price>{price}<span>원</span></Price>
       </div>
       {
         isSoldOut
@@ -110,17 +111,17 @@ export default function DetailInfo({ productData, pageType }) {
               <ShippingType>
                 택배배송 /
                 {
-                  data.shippingFee === 0
+                  shippingFee === 0
                     ? ' 무료배송'
-                    : ` ${data.shippingFee}원`
+                    : ` ${shippingFee}원`
                 }
               </ShippingType>
               <Line margin='10px' />
               <SelectButtonWrapper>
                 {
-                  data.option.length === 0
-                    ? (<AmountButton onChangeAmount={handleAmountChange} stockCount={data.stockCount} amount={amount} />)
-                    : (<DropdownButton options={data.option} pageType={pageType} />)
+                  hasOption
+                    ? (<AmountButton onChangeAmount={handleAmountChange} stockCount={stockCount} amount={amount} />)
+                    : (<DropdownButton options={option} pageType={pageType} />)
                 }
               </SelectButtonWrapper>
               <Line margin='16px' />
@@ -128,7 +129,7 @@ export default function DetailInfo({ productData, pageType }) {
                 <h2>총 상품 금액</h2>
                 <FinalPriceInfo>
                   <Quantity>총 수량 <span>{amount}</span>개</Quantity>
-                  <FinalPrice>{amount * data.price}<span>원</span></FinalPrice>
+                  <FinalPrice>{amount * price}<span>원</span></FinalPrice>
                 </FinalPriceInfo>
               </PriceInfo>
             </>

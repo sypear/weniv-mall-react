@@ -40,7 +40,7 @@ const CloseButton = styled.button`
 `;
 
 const Modal = ({ productsData }) => {
-  const id = useLocation().pathname.slice(1);
+  const id = useLocation().pathname.split('/')[2];
   const productData = { ...productsData.filter(item => item.id === +id)[0] };
   const navigate = useNavigate();
   const backgroundRef = useRef(null);

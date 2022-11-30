@@ -19,7 +19,7 @@ export default function HomePage({ productsData }) {
       <ProductList>
         {
           productsData.map((item) => (
-            <Link key={item.id} to={`/${item.id}`} state={{ background: location }}>
+            <Link key={item.id} to={`/product/${item.id}`} state={{ background: location }}>
               <Card item={item} pageType='home' />
             </Link>
           ))

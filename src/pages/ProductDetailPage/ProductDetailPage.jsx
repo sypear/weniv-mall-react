@@ -29,7 +29,6 @@ const ProductDetailPage = () => {
   useEffect(() => {
     getProductData();
     setIsGetData(true);
-    console.log(productData);
   }, []);
 
   return (

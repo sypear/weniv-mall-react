@@ -4,6 +4,7 @@ import ProductDetail from '../../components/ProductDetail/ProductDetail';
 import styled from 'styled-components';
 import axios from 'axios';
 import NotProductPage from '../NotProductPage/NotProductPage';
+import Loading from '../../components/Loading/Loading';
 
 const Wrapper = styled.div`
   width: 990px;
@@ -40,7 +41,7 @@ const ProductDetailPage = () => {
             <ProductDetail id={id} pageType='page' productData={productData} />
           )
             : <NotProductPage />
-          : <div>로딩 중</div>
+          : <Loading />
       }
     </Wrapper>
   );

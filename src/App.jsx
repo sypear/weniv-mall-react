@@ -11,6 +11,7 @@ import CartPage from "./pages/CartPage/CartPage";
 import ProductDetailPage from "./pages/ProductDetailPage/ProductDetailPage";
 import ProductModal from "./components/Modal/Modal";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import Loading from "./components/Loading/Loading";
 
 const GlobalStyles = createGlobalStyle`
   ${reset}
@@ -64,6 +65,7 @@ function App() {
   const location = useLocation();
   const background = location.state && location.state.background;
   const [productsData, setProductsData] = useState([]);
+  const [isGetData, setIsGetData] = useState(false);
 
   const url = "https://test.api.weniv.co.kr/mall";
 
@@ -80,6 +82,7 @@ function App() {
 
   useEffect(() => {
     getProductsData();
+    setIsGetData(true);
   }, []);
 
   return (
@@ -87,17 +90,27 @@ function App() {
       <GlobalStyles />
       <Header />
       <ContentsWrapper>
-        <Routes location={background || location}>
-          <Route path="/" element={<HomePage productsData={productsData} />} />
-          <Route path="/product/:id" element={<ProductDetailPage productsData={productsData} />} />
-          <Route path="/cart" element={<CartPage />} />
-          <Route path="/*" element={<NotFoundPage />} />
-        </Routes>
-        {background && (
-          <Routes>
-            <Route path="/product/:id" element={<ProductModal productsData={productsData} />} />
-          </Routes>
-        )}
+        {
+          isGetData
+            ? (
+              <>
+                <Routes location={background || location}>
+                  <Route path="/" element={<HomePage productsData={productsData} />} />
+                  <Route path="/product/:id" element={<ProductDetailPage productsData={productsData} />} />
+                  <Route path="/cart" element={<CartPage />} />
+                  <Route path="/*" element={<NotFoundPage />} />
+                </Routes>
+                {background && (
+                  <Routes>
+                    <Route path="/product/:id" element={<ProductModal productsData={productsData} />} />
+                  </Routes>
+                )}
+              </>
+            )
+            : (
+              <Loading />
+            )
+        }
       </ContentsWrapper>
       <Footer />
     </Wrapper>

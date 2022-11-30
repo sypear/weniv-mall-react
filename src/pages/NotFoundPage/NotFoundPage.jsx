@@ -25,7 +25,7 @@ const ErrorText = styled.p`
 const NotFoundPage = () => {
   return (
     <Wrapper>
-      <h1 className="sr-only">요청한 페이지를 찾을 수 없습니다.</h1>
+      <h2 className="sr-only">존재하지 않는 페이지</h2>
       <ErrorIcon src={NotFoundIcon} alt="" />
       <ErrorText>
         <strong>입력하신 URL은 없는 URL입니다.</strong> <br />

@@ -25,7 +25,7 @@ const ErrorText = styled.p`
 const NotProductPage = () => {
   return (
     <Wrapper>
-      <h1 className="sr-only">요청한 상품을 찾을 수 없습니다.</h1>
+      <h2 className="sr-only">존재하지 않는 상품</h2>
       <ErrorIcon src={EmptyIcon} alt="" />
       <ErrorText>
         <strong>존재하지 않는 상품입니다.</strong> <br />

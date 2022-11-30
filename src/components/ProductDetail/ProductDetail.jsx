@@ -5,7 +5,7 @@ import ProductInfo from './ProductInfo/ProductInfo';
 import DetailInfo from './DetailInfo/DetailInfo';
 import ProductContents from './ProductContents/ProductContents';
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
 `;
@@ -22,6 +22,7 @@ const Top = styled.div`
 const ProductDetail = ({ pageType, productData = {} }) => {
   return (
     <Wrapper>
+      <h2 className="sr-only">{`${productData.productName} 상품 상세 정보`}</h2>
       {
         <>
           <Top>

@@ -16,7 +16,7 @@ const Overlay = styled.div`
   z-index: 9999;
 `;
 
-const ModalWrapper = styled.div`
+const ModalWrapper = styled.section`
   position: fixed;
   top: 50%;
   left: 50%;
@@ -67,6 +67,8 @@ const Modal = ({ productsData }) => {
   return (
     <Overlay ref={backgroundRef} onClick={handleCloseModal}>
       <ModalWrapper>
+        <h2 className="sr-only">{`${productData.productName} 상품 상세 정보`}</h2>
+
         <ProductDetail productData={productData} pageType='modal' />
         <CloseButton onClick={() => navigate(-1)} />
       </ModalWrapper>

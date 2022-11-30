@@ -7,7 +7,7 @@ const ProductContents = ({ detailInfoImage = [], productName }) => {
     <>
       {
         images.map((image, index) => (
-          <img key={image} src={image} alt={`${productName} 상세 이미지 ${index + 1}`}></img>
+          <img key={image} src={image} alt={`${productName} 상세 이미지 ${index + 1}`} />
         ))
       }
     </>

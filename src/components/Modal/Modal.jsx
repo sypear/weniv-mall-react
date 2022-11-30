@@ -64,8 +64,6 @@ const Modal = ({ productsData }) => {
     }
   }
 
-  console.log(productData);
-
   return (
     <Overlay ref={backgroundRef} onClick={handleCloseModal}>
       <ModalWrapper>

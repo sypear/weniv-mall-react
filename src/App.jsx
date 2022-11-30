@@ -66,13 +66,6 @@ function App() {
       <GlobalStyles />
       <Header />
       <ContentsWrapper>
-        {/* <Routes >
-          <Route path="/" element={<HomePage />} />
-          <Route path="/:id" element={<ProductDetailPage />}>
-            {background && <Route path="modal" element={<InfoModal />} />}
-          </Route>
-          <Route path="/cart" element={<CartPage />} />
-        </Routes> */}
         <Routes location={background || location}>
           <Route path="/" element={<HomePage />} />
           <Route path="/:id" element={<ProductDetailPage />} />
@@ -85,7 +78,7 @@ function App() {
         )}
       </ContentsWrapper>
       <Footer />
-  </Wrapper>
+    </Wrapper>
   );
 }
 

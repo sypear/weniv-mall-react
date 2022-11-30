@@ -19,9 +19,6 @@ export default function HomePage() {
   return (
     <>
       <ProductList>
-        {/* <Link to="/modal" state={{ background: location }}>
-          Open Modal
-        </Link> */}
         {
           data.map((item) => (
             <Link key={item.id} to={`/${item.id}`} state={{ background: location }}>

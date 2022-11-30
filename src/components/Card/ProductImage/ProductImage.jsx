@@ -9,7 +9,7 @@ const Wrapper = styled.div`
 const Overlay = styled.div`
   position: absolute;
   top: 0;
-  bottom: 0;
+  bottom: 3px;
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.5);
@@ -37,7 +37,7 @@ const SoldOut = styled.div`
   z-index: 20;
 `;
 
-export default function ProductImage({thumbnailImg, widthSize, stockCount, pageType}) {
+export default function ProductImage({ thumbnailImg, widthSize, stockCount, pageType }) {
   const thubnailImgURL = `https://test.api.weniv.co.kr/${thumbnailImg}`;
 
   return (

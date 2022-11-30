@@ -32,9 +32,7 @@ const InfoWrapper = styled.ul`
   }
 `;
 
-const ProductInfo = ({pubDate, id, stockCount}) => {
-  const productNo = pubDate.replaceAll('-', '') + id;
-
+const ProductInfo = ({ pubDate, id, stockCount }) => {
   return (
     <>
       <Title>상품 정보</Title>
@@ -42,7 +40,7 @@ const ProductInfo = ({pubDate, id, stockCount}) => {
       <InfoWrapper>
         <li>
           <h3>상품 번호</h3>
-          <p>{productNo}</p>
+          <p>{id}</p>
         </li>
 
         <li>

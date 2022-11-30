@@ -19,7 +19,7 @@ const Top = styled.div`
   }
 `;
 
-const ProductDetail = ({productData, pageType}) => {
+const ProductDetail = ({ productData, pageType }) => {
   const data = productData[0];
 
   return (

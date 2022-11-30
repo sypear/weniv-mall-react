@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import PlusIcon from '../../../assets/images/plus-icon.png'
 import MinusIcon from '../../../assets/images/minus-icon.png'
@@ -41,7 +41,7 @@ const PlusButton = styled.button`
   text-indent: -99999px;
 `;
 
-export default function AmountButton({onChangeAmount, stockCount, amount}) {
+export default function AmountButton({ onChangeAmount, stockCount, amount }) {
   const handleSubtractAmount = () => {
     if (amount - 1 < 1) {
       alert('수량은 1개 이상이어야 합니다.');
@@ -72,10 +72,10 @@ export default function AmountButton({onChangeAmount, stockCount, amount}) {
   return (
     <Wrapper>
       <MinusButton onClick={handleSubtractAmount}> - </MinusButton>
-        <Amount>
-          <label htmlFor="input-amount" className="sr-only">선택 수량</label>
-          <input type="number" id="input-amount" min="1" max={stockCount} value={amount} onChange={(e) => handleChangeAmount(e)} />
-        </Amount>
+      <Amount>
+        <label htmlFor="input-amount" className="sr-only">선택 수량</label>
+        <input type="number" id="input-amount" min="1" max={stockCount} value={amount} onChange={(e) => handleChangeAmount(e)} />
+      </Amount>
       <PlusButton onClick={handleAddAmount}> + </PlusButton>
     </Wrapper>
   )

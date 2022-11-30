@@ -15,7 +15,7 @@ const Price = styled.strong`
   }
 `;
 
-export default function ProductPrice({price}) {
+export default function ProductPrice({ price }) {
   return (
     <Price>
       {price}<span>원</span>

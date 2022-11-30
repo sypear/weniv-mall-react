@@ -15,7 +15,7 @@ const Button = styled.button`
   ${props => props.isSoldOut ? 'pointer-events: none;' : null};
 `;
 
-export default function FillButton({isSoldOut, pageType, text}) {
+export default function FillButton({ isSoldOut, pageType, text }) {
 
   return (
     <Button pageType={pageType} isSoldOut={isSoldOut}>{text}</Button>

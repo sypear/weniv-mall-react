@@ -4,7 +4,7 @@ import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import HomePage from "./pages/HomePage/HomePage";
 import "./app.css";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import CartPage from "./pages/CartPage/CartPage";
 import ProductDetailPage from "./pages/ProductDetailPage/ProductDetailPage";
 import ProductModal from "./components/Modal/Modal";

@@ -87,7 +87,7 @@ const ControlButonWrapper = styled.div`
   gap: 6px;
 `;
 
-export default function DetailInfo({productData, pageType}) {
+export default function DetailInfo({ productData, pageType }) {
   const data = productData[0];
   const [isSoldOut, setIsSoldOut] = useState(data.stockCount === 0 ? true : false);
   const [amount, setIsAmount] = useState(1);
@@ -104,35 +104,35 @@ export default function DetailInfo({productData, pageType}) {
       </div>
       {
         isSoldOut
-        ? null
-        : (
-          <>
-            <ShippingType>
-              택배배송 /
-              {
-                data.shippingFee === 0
-                ? ' 무료배송'
-                : ` ${data.shippingFee}원`
-              }
-            </ShippingType>
-            <Line margin='10px' />
-            <SelectButtonWrapper>
-            {
-              data.option.length === 0
-              ? ( <AmountButton onChangeAmount={handleAmountChange} stockCount={data.stockCount} amount={amount} /> )
-              : ( <DropdownButton options={data.option} pageType={pageType} /> )
-            }
-            </SelectButtonWrapper>
-            <Line margin='16px' />
-            <PriceInfo>
-              <h2>총 상품 금액</h2>
-              <FinalPriceInfo>
-                <Quantity>총 수량 <span>{amount}</span>개</Quantity>
-                <FinalPrice>{amount * data.price}<span>원</span></FinalPrice>
-              </FinalPriceInfo>
-            </PriceInfo>
-          </>
-        )
+          ? null
+          : (
+            <>
+              <ShippingType>
+                택배배송 /
+                {
+                  data.shippingFee === 0
+                    ? ' 무료배송'
+                    : ` ${data.shippingFee}원`
+                }
+              </ShippingType>
+              <Line margin='10px' />
+              <SelectButtonWrapper>
+                {
+                  data.option.length === 0
+                    ? (<AmountButton onChangeAmount={handleAmountChange} stockCount={data.stockCount} amount={amount} />)
+                    : (<DropdownButton options={data.option} pageType={pageType} />)
+                }
+              </SelectButtonWrapper>
+              <Line margin='16px' />
+              <PriceInfo>
+                <h2>총 상품 금액</h2>
+                <FinalPriceInfo>
+                  <Quantity>총 수량 <span>{amount}</span>개</Quantity>
+                  <FinalPrice>{amount * data.price}<span>원</span></FinalPrice>
+                </FinalPriceInfo>
+              </PriceInfo>
+            </>
+          )
       }
       <ControlButonWrapper>
         <FillButton isSoldOut={isSoldOut} pageType={pageType} text={isSoldOut ? '품절된 상품입니다.' : '바로 구매'} />

@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Dropdown from '../../components/Buttons/DropdownButton/DropdownButton';
 import FillButton from '../../components/Buttons/FillButton/FillButton';
 import Line from '../../components/Line/Line';
 

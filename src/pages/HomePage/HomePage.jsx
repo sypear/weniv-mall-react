@@ -4,7 +4,6 @@ import { data } from '../../database/data';
 import Card from '../../components/Card/Card';
 import Cart from '../../components/Cart/Cart';
 import { Link, useLocation } from 'react-router-dom';
-import InfoModal from '../../components/Modal/Modal';
 
 const ProductList = styled.ul`
   width: 1260px;

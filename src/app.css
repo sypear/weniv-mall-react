@@ -2,40 +2,40 @@
   font-family: 'Spoqa Han Sans Neo';
   font-weight: 700;
   src: url('./assets/fonts/SpoqaHanSansNeo-Bold.otf') format('woff2'),
-      url('./assets/fonts/SpoqaHanSansNeo-Bold.otf') format('woff'),
-      url('./assets/fonts/SpoqaHanSansNeo-Bold.otf') format('truetype');
+    url('./assets/fonts/SpoqaHanSansNeo-Bold.otf') format('woff'),
+    url('./assets/fonts/SpoqaHanSansNeo-Bold.otf') format('truetype');
 }
 
 @font-face {
   font-family: 'Spoqa Han Sans Neo';
   font-weight: 300;
   src: url('./assets/fonts/SpoqaHanSansNeo-Light.otf') format('woff2'),
-        url('./assets/fonts/SpoqaHanSansNeo-Light.otf') format('woff'),
-        url('./assets/fonts/SpoqaHanSansNeo-Light.otf') format('truetype');
+    url('./assets/fonts/SpoqaHanSansNeo-Light.otf') format('woff'),
+    url('./assets/fonts/SpoqaHanSansNeo-Light.otf') format('truetype');
 }
 
 @font-face {
   font-family: 'Spoqa Han Sans Neo';
   font-weight: 500;
   src: url('./assets/fonts/SpoqaHanSansNeo-Medium.otf') format('woff2'),
-      url('./assets/fonts/SpoqaHanSansNeo-Medium.otf') format('woff'),
-      url('./assets/fonts/SpoqaHanSansNeo-Medium.otf') format('truetype');
+    url('./assets/fonts/SpoqaHanSansNeo-Medium.otf') format('woff'),
+    url('./assets/fonts/SpoqaHanSansNeo-Medium.otf') format('truetype');
 }
 
 @font-face {
   font-family: 'Spoqa Han Sans Neo';
   font-weight: 400;
   src: url('./assets/fonts/SpoqaHanSansNeo-Regular.otf') format('woff2'),
-        url('./assets/fonts/SpoqaHanSansNeo-Regular.otf') format('woff'),
-        url('./assets/fonts/SpoqaHanSansNeo-Regular.otf') format('truetype');
+    url('./assets/fonts/SpoqaHanSansNeo-Regular.otf') format('woff'),
+    url('./assets/fonts/SpoqaHanSansNeo-Regular.otf') format('truetype');
 }
 
 @font-face {
   font-family: 'Spoqa Han Sans Neo';
   font-weight: thin;
   src: url('./assets/fonts/SpoqaHanSansNeo-Thin.otf') format('woff2'),
-        url('./assets/fonts/SpoqaHanSansNeo-Thin.otf') format('woff'),
-        url('./assets/fonts/SpoqaHanSansNeo-Thin.otf') format('truetype');
+    url('./assets/fonts/SpoqaHanSansNeo-Thin.otf') format('woff'),
+    url('./assets/fonts/SpoqaHanSansNeo-Thin.otf') format('truetype');
 }
 
 :root {
@@ -67,5 +67,5 @@
   padding: 0;
   margin: -1px;
   border: 0;
-  clip: rect(0,0,0,0);
+  clip: rect(0, 0, 0, 0);
 }

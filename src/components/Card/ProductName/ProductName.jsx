@@ -9,7 +9,7 @@ const TextProductName = styled.strong`
   line-height: 22px;
 `;
 
-export default function ProductName({productName}) {
+export default function ProductName({ productName }) {
   return (
     <TextProductName className='ellipsis'>
       {productName}

@@ -40,7 +40,7 @@ const Item = styled.li`
   }
 `
 
-const Dropdown = ({options, pageType}) => {
+const Dropdown = ({ options, pageType }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -52,12 +52,12 @@ const Dropdown = ({options, pageType}) => {
             {
               options.map(option => (
                 <Item key={option.id}>
-                    {option.optionName}
-                    {
-                      option.additionalFee === 0 ?
+                  {option.optionName}
+                  {
+                    option.additionalFee === 0 ?
                       null :
                       ` (+ ${option.additionalFee}원)`
-                    }
+                  }
                 </Item>
               ))
             }

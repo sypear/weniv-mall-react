@@ -14,7 +14,7 @@ const Button = styled.button`
   text-indent: -99999px;
 `;
 
-export default function LikeButton({isSoldOut}) {
+export default function LikeButton({ isSoldOut }) {
   return (
     <Button isSoldOut={isSoldOut}>좋아요</Button>
   )

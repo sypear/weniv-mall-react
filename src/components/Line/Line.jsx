@@ -6,7 +6,7 @@ const Horizon = styled.div`
   margin-bottom: ${props => props.margin};
 `;
 
-const Line = ({margin}) => {
+const Line = ({ margin }) => {
   return (
     <Horizon margin={margin}></Horizon>
   );

@@ -12,7 +12,7 @@ const Button = styled.button`
   ${props => props.isSoldOut ? 'pointer-events: none;' : null};
 `;
 
-export default function CartButton({isSoldOut}) {
+export default function CartButton({ isSoldOut }) {
   return (
     <Button isSoldOut={isSoldOut} />
   )

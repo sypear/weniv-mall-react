@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const Title = styled.h2`
   margin-bottom: 16px;
   font-size: 16px;
+  font-weight: 500;
 `;
 
 const InfoWrapper = styled.ul`

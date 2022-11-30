@@ -34,7 +34,7 @@ const CartPage = () => {
       <CouponWrapper>
         <SubTitle>쿠폰 사용</SubTitle>
         <Line margin='16px' />
-        <Dropdown />
+        <div>쿠폰 드롭다운 위치</div>
       </CouponWrapper>
 
       <SubTitle>주문 상품</SubTitle>
